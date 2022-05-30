@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <style>
+        html,
+        body {
+            margin: 0px;
+            height: 100%;
+            width: 100%;
+            overflow: hidden
+        }
+
+        label {
+            text-align: center;
+            position: absolute;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: xx-large;
+            color: white;
+        }
+
+        input {
+            text-align: center;
+            position: absolute;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: xx-large;
+            background-color: #2B2D2F;
+            color: white;
+            border: 1px solid #000;
+        }
+
+        .howToPlayDiv {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            position: absolute;
+            padding: 60px;
+            font-size: large;
+            text-align: center;
+            max-width: 350px;
+            overflow-wrap: break-word;
+            line-height: 50px;
+        }
+
+        .scoringDiv {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+            position: absolute;
+            padding: 60px;
+            font-size: large;
+            text-align: center;
+            max-width: 350px;
+            overflow-wrap: break-word;
+            line-height: 50px;
+            right: 0;
+        }
+
+        .creditLabel {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: medium;
+            text-align: center;
+            color: white;
+            position: absolute;
+            bottom: 5px;
+            left: 5px
+        }
+
+        .rulesButton {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: medium;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            background-color: #2B2D2F;
+            color: white;
+        }
+    </style>
+
+    <title>WordGame</title>
+</head>
+
+<body>
+    <div class="howToPlayDiv" id="howToPlayDiv">
+        <h2><u>How to Play</u></h2>
+        <p>Make a word using the given two letters to get points. The longer the word you make, the
+            more points you get. Try to get as many points per guess as possible!
+        </p>
+    </div>
+    
+    <div class="scoringDiv" id="scoringDiv">
+        <h2><u>Scoring Chart</u></h2>
+        <p>
+            First 5 letters (1 - 5): 1 point each <br>
+            Next 5 letters (6 - 10): 2 points each <br>
+            Next 5 letters (11 - 15): 4 points each <br>
+            All letters after (15+): 8 points each <br>
+        </p>
+
+    </div>
+
+    <label id="title" type="text" style="font-size: 70px; padding: 10px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">WordIt</label>
+
+    <input id="input1" type="text" name="input1" style="text-align: center; position: absolute; z-index: 98; border: 1;"
+        onKeyDown="onKeyDown(event)">
+    <label id="label1" type="text" style="z-index: 99;"></label>
+    <label id="guessLabel" type="text" style="z-index: 99;"></label>
+    <label id="avgLabel" type="text" style="z-index: 99;"></label>
+    <label id="labelScore" type="text" style="z-index: 99;"></label>
+
+    <label class="creditLabel" type="text" style="z-index: 99;">Made by Sreekar Bheemavarapu</label>
+
+    <button class="rulesButton" type="button" onclick="helpButtonPress()" style="z-index: 100;">?</button>
+
+</body>
+
+<canvas id="canvas1" style="border: 1px solid rgb(0, 0, 0); position: absolute; z-index: 97;"></canvas>
+
+<script type="text/javascript" src="words.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</html>
